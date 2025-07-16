@@ -175,76 +175,6 @@
       width: 100%;
     }
 
-    .nav-buttons {
-      display: flex;
-      gap: 15px;
-      margin-left: auto;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      transition: var(--transition);
-      cursor: pointer;
-      font-size: 16px;
-      border: none;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      transition: transform 0.5s ease;
-      transform: scaleX(0);
-      transform-origin: right;
-    }
-
-    .btn:hover::before {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary::before {
-      background: var(--primary-dark);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-      animation: pulse 1.5s infinite;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--light);
-      border: 1px solid var(--accent);
-    }
-
-    .btn-secondary::before {
-      background: rgba(0, 210, 255, 0.1);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--accent);
-      animation: pulse-outline 1.5s infinite;
-    }
-
     .mobile-toggle {
       display: none;
       background: none;
@@ -1123,11 +1053,156 @@
     }
 
     @media (max-width: 768px) {
-@media (max-width: 768px) {
-  .header-inner {
-    flex-wrap: wrap;
-    justify-content: space-between;
+  header {
+    padding: 10px 0 !important;
+    height: 60px !important;
   }
+  
+  .header-inner {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 60px !important;
+  }
+  
+  .logo {
+    margin-right: 8px !important;
+    font-size: 20px !important;
+    min-width: 80px !important;
+  }
+  
+  nav ul {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: var(--light);
+  }
+  
+  nav.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    padding: 15px 0;
+    z-index: 1000;
+  }
+  
+  nav.active ul li {
+    margin: 10px 0;
+  }
+
+  .hero {
+    padding: 80px 0 40px;
+    min-height: auto;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+  
+  .hero-buttons .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .stats {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .stat-item {
+    flex: 1 1 40%;
+    min-width: 120px;
+  }
+  
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    margin: 50px 0 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .steps-container {
+    gap: 30px;
+  }
+  
+  .step-card {
+    padding: 20px;
+  }
+  
+  .step-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .step-number {
+    margin-bottom: 15px;
+  }
+  
+  .step-visual {
+    height: 180px;
+  }
+  
+  .science-section {
+    padding: 25px;
+  }
+  
+  .science-title {
+    font-size: 1.8rem;
+  }
+  
+  .pricing-card {
+    margin-bottom: 25px;
+    padding: 25px;
+  }
+  
+  .pricing-card.popular::before {
+    right: -35px;
+    font-size: 11px;
+    padding: 4px 35px;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+  
+  .cta-container {
+    padding: 25px 15px;
+  }
+  
+  .cta-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .footer-grid {
+    gap: 30px;
+  }
+}
+
+.neural-bg, .neuron-animation {
+  display: block !important;
+  opacity: 0.7 !important;
+}
 
   .logo {
     flex: 1 1 100%;
@@ -1135,136 +1210,6 @@
     font-size: 24px;
     margin-bottom: 10px;
   }
-
-  .nav-buttons {
-  header {
-    padding: 10px 0 !important;
-    background: rgba(15, 23, 42, 0.95) !important;
-    position: fixed !important;
-    width: 100% !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 60px !important;
-  }
-  .header-inner {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    width: 100% !important;
-    height: 60px !important;
-  }
-  .logo {
-    margin-right: 8px !important;
-    font-size: 20px !important;
-    min-width: 80px !important;
-  }
-  nav ul {
-    gap: 10px !important;
-    font-size: 13px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .header-buttons {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 5px !important;
-    margin-left: auto !important;
-  }
-  .btn-primary, .btn-secondary {
-    font-size: 13px !important;
-    padding: 6px 10px !important;
-    margin: 0 1px !important;
-    border-radius: 7px !important;
-    min-width: 70px !important;
-    height: 32px !important;
-    box-sizing: border-box !important;
-  }
-      
-      .nav-buttons {
-        flex-direction: column;
-        margin-top: 30px;
-        margin-left: 0;
-      }
-      
-      .hero {
-        padding: 80px 0 40px;
-        min-height: auto;
-      }
-      
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      
-      .hero p {
-        font-size: 1.1rem;
-      }
-      
-      .section-title {
-        margin: 60px 0 40px;
-      }
-      
-      .section-title h2 {
-        font-size: 2.2rem;
-      }
-      
-      .steps-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      
-      .step-card {
-        padding: 25px;
-      }
-      
-      .pricing-container {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .pricing-card {
-        width: 100%;
-        max-width: 400px;
-        margin-bottom: 30px;
-      }
-      
-      .pricing-card.popular {
-        transform: scale(1);
-      }
-      
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .science-section {
-        padding: 30px;
-      }
-      
-      .cta-container {
-        padding: 30px;
-      }
-      
-      .cta-container h2 {
-        font-size: 2rem;
-      }
-      
-      .stats {
-        margin-top: 30px;
-        gap: 15px;
-      }
-      
-      .stat-number {
-        font-size: 1.8rem;
-      }
-    }
 
     @media (max-width: 480px) {
       .hero {
@@ -1427,11 +1372,6 @@
             <li><a href="#login" id="login-link">Accedi</a></li>
           </ul>
         </nav>
-        
-        <div class="nav-buttons">
-          <a href="#cta" class="btn btn-primary" id="signup-btn">Inizia Gratis</a>
-          <a href="#login" class="btn btn-secondary" id="login-btn">Accedi</a>
-        </div>
         
         <button class="mobile-toggle" id="mobileToggle">
           <i class="fas fa-bars"></i>
@@ -1754,514 +1694,506 @@
   </footer>
 
   <script>
-    // Mobile Navigation Toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const nav = document.getElementById('nav');
-    
-    mobileToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      mobileToggle.innerHTML = nav.classList.contains('active') ? 
-        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-    
-    // Header Scroll Effect
-    const header = document.getElementById('header');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      
-      // Back to top button
-      const backToTop = document.getElementById('backToTop');
-      if (window.scrollY > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
+  // Mobile Navigation
+  const mobileToggle = document.getElementById('mobileToggle');
+  const nav = document.getElementById('nav');
+  
+  mobileToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    mobileToggle.innerHTML = nav.classList.contains('active') ? 
+      '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+  });
+
+  // Header Scroll Effect
+  const header = document.getElementById('header');
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
     
     // Back to top button
     const backToTop = document.getElementById('backToTop');
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-    
-    // Smooth Scrolling for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          
-          // Close mobile menu if open
-          if (nav.classList.contains('active')) {
-            nav.classList.remove('active');
-            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-          }
-        }
-      });
-    });
-    
-    // Animate stats on scroll
-    const stats = document.querySelectorAll('.stat-number');
-    
-    function animateStats() {
-      stats.forEach(stat => {
-        const rect = stat.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-        
-        if (isVisible && !stat.dataset.animated) {
-          stat.dataset.animated = true;
-          stat.style.animation = 'count-up 1.5s forwards';
-        }
-      });
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
     }
-    
-    // Initial check and event listener
-    animateStats();
-    window.addEventListener('scroll', animateStats);
-    
-    // Auth Modal
-    const authModal = document.getElementById('authModal');
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    const closeModal = document.getElementById('closeModal');
-    const authTabs = document.querySelectorAll('.auth-tab');
-    const loginBtn = document.getElementById('login-btn');
-    const signupBtn = document.getElementById('signup-btn');
-    const loginLink = document.getElementById('login-link');
-    const ctaBtn = document.getElementById('cta-btn');
-
-    // Functions to open/close modal
-    function openAuthModal(tab = 'login') {
-      authModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      
-      // Activate correct tab
-      authTabs.forEach(tabEl => {
-        if (tabEl.dataset.tab === tab) {
-          tabEl.classList.add('active');
-          document.getElementById(`${tab}-form`).classList.add('active');
-        } else {
-          tabEl.classList.remove('active');
-          document.getElementById(`${tabEl.dataset.tab}-form`).classList.remove('active');
-        }
-      });
-    }
-
-    function closeAuthModal() {
-      authModal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    // Event Listeners
-    loginBtn.addEventListener('click', (e) => {
+  });
+  
+  // Back to top button
+  const backToTop = document.getElementById('backToTop');
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Smooth Scrolling for Anchor Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      openAuthModal('login');
-    });
-
-    signupBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openAuthModal('signup');
-    });
-
-    loginLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      openAuthModal('login');
-    });
-
-    ctaBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openAuthModal('signup');
-    });
-
-    closeModal.addEventListener('click', closeAuthModal);
-
-    // Close modal when clicking outside
-    authModal.addEventListener('click', (e) => {
-      if (e.target === authModal) {
-        closeAuthModal();
-      }
-    });
-
-    // Tab switching
-    authTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const tabName = tab.dataset.tab;
-        authTabs.forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
-        
-        tab.classList.add('active');
-        document.getElementById(`${tabName}-form`).classList.add('active');
-      });
-    });
-
-    // Form submission
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
       
-      // Login logic would go here
-      alert('Login effettuato con successo!');
-      closeAuthModal();
-    });
-
-    signupForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('signup-name').value;
-      const email = document.getElementById('signup-email').value;
-      const password = document.getElementById('signup-password').value;
-      const confirm = document.getElementById('signup-confirm').value;
-      
-      if (password !== confirm) {
-        alert('Le password non corrispondono!');
-        return;
-      }
-      
-      // Registration logic would go here
-      alert('Registrazione completata! Controlla la tua email per confermare l\'account.');
-      closeAuthModal();
-    });
-    
-    // Highlight active menu item on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-    
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - 100)) {
-          current = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    });
-    
-    // Neural Background Animation
-    function initNeuralBackground() {
-      const neuralCanvas = document.getElementById('neuralCanvas');
-      const canvasWidth = window.innerWidth;
-      const canvasHeight = window.innerHeight;
-      
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ 
-          alpha: true,
-          antialias: true 
-      });
-      renderer.setSize(canvasWidth, canvasHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      neuralCanvas.appendChild(renderer.domElement);
-      
-      // Particle system
-      const particles = [];
-      const particleCount = 300;
-      const particleGeometry = new THREE.BufferGeometry();
-      const positions = new Float32Array(particleCount * 3);
-      const colors = new Float32Array(particleCount * 3);
-      
-      for (let i = 0; i < particleCount; i++) {
-          const i3 = i * 3;
-          positions[i3] = (Math.random() - 0.5) * 20;
-          positions[i3 + 1] = (Math.random() - 0.5) * 20;
-          positions[i3 + 2] = (Math.random() - 0.5) * 20;
-          
-          // Colori viola-blu
-          colors[i3] = Math.random() * 0.5 + 0.5; // R
-          colors[i3 + 1] = Math.random() * 0.3 + 0.3; // G
-          colors[i3 + 2] = Math.random() * 0.8 + 0.2; // B
-          
-          particles.push({
-              velocity: new THREE.Vector3(
-                  (Math.random() - 0.5) * 0.05,
-                  (Math.random() - 0.5) * 0.05,
-                  (Math.random() - 0.5) * 0.05
-              ),
-              amplitude: Math.random() * 0.1 + 0.05,
-              frequency: Math.random() * 0.1 + 0.01
-          });
-      }
-      
-      particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-      particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-      
-      const particleMaterial = new THREE.PointsMaterial({
-          size: 0.15,
-          vertexColors: true,
-          transparent: true,
-          opacity: 0.8,
-          sizeAttenuation: true,
-          blending: THREE.AdditiveBlending
-      });
-      
-      const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
-      scene.add(particleSystem);
-      
-      // Create connections
-      const connections = [];
-      const connectionMaterial = new THREE.LineBasicMaterial({
-          color: 0x5d78ff,
-          transparent: true,
-          opacity: 0.15,
-          linewidth: 1
-      });
-      
-      // Create neuron nodes
-      const neurons = [];
-      const neuronCount = 15;
-      
-      for (let i = 0; i < neuronCount; i++) {
-          const neuronGeometry = new THREE.SphereGeometry(0.3, 8, 8);
-          const neuronMaterial = new THREE.MeshBasicMaterial({
-              color: new THREE.Color(Math.random() * 0.5 + 0.5, Math.random() * 0.3, Math.random() * 0.8 + 0.2),
-              transparent: true,
-              opacity: 0.7
-          });
-          
-          const neuron = new THREE.Mesh(neuronGeometry, neuronMaterial);
-          neuron.position.set(
-              (Math.random() - 0.5) * 15,
-              (Math.random() - 0.5) * 15,
-              (Math.random() - 0.5) * 15
-          );
-          
-          neurons.push(neuron);
-          scene.add(neuron);
-      }
-      
-      // Create connections between neurons
-      for (let i = 0; i < neuronCount; i++) {
-          for (let j = i + 1; j < neuronCount; j++) {
-              if (Math.random() > 0.7) {
-                  const distance = neurons[i].position.distanceTo(neurons[j].position);
-                  if (distance < 8) {
-                      const connectionGeometry = new THREE.BufferGeometry().setFromPoints([
-                          neurons[i].position.clone(),
-                          neurons[j].position.clone()
-                      ]);
-                      
-                      const connection = new THREE.Line(connectionGeometry, connectionMaterial);
-                      scene.add(connection);
-                      connections.push({
-                          line: connection,
-                          start: neurons[i],
-                          end: neurons[j]
-                      });
-                  }
-              }
-          }
-      }
-      
-      // Add pulsing effect to neurons
-      neurons.forEach(neuron => {
-          neuron.userData = {
-              baseScale: neuron.scale.clone(),
-              pulseSpeed: Math.random() * 0.01 + 0.005
-          };
-      });
-      
-      // Camera position and animation
-      camera.position.z = 20;
-      
-      // Lighting
-      const ambientLight = new THREE.AmbientLight(0x444444);
-      scene.add(ambientLight);
-      
-      const pointLight = new THREE.PointLight(0x5d78ff, 1, 100);
-      pointLight.position.set(10, 10, 10);
-      scene.add(pointLight);
-      
-      // Animation loop
-      let time = 0;
-      
-      function animate() {
-          requestAnimationFrame(animate);
-          
-          time += 0.01;
-          
-          // Animate particles
-          const positions = particleGeometry.attributes.position.array;
-          for (let i = 0; i < particleCount; i++) {
-              const i3 = i * 3;
-              const p = particles[i];
-              
-              positions[i3] += Math.sin(time * p.frequency) * p.amplitude + p.velocity.x;
-              positions[i3 + 1] += Math.cos(time * p.frequency) * p.amplitude + p.velocity.y;
-              positions[i3 + 2] += Math.sin(time * p.frequency * 0.5) * p.amplitude + p.velocity.z;
-              
-              // Wrap around edges
-              if (Math.abs(positions[i3]) > 10) positions[i3] = -positions[i3];
-              if (Math.abs(positions[i3 + 1]) > 10) positions[i3 + 1] = -positions[i3 + 1];
-              if (Math.abs(positions[i3 + 2]) > 10) positions[i3 + 2] = -positions[i3 + 2];
-          }
-          particleGeometry.attributes.position.needsUpdate = true;
-          
-          // Animate neurons
-          neurons.forEach(neuron => {
-              const pulse = Math.sin(time * neuron.userData.pulseSpeed) * 0.2 + 1;
-              neuron.scale.copy(neuron.userData.baseScale).multiplyScalar(pulse);
-              
-              // Gentle movement
-              neuron.position.x += Math.sin(time * neuron.userData.pulseSpeed * 0.5) * 0.01;
-              neuron.position.y += Math.cos(time * neuron.userData.pulseSpeed * 0.7) * 0.01;
-          });
-          
-          // Update connections
-          connections.forEach(conn => {
-              const positions = conn.line.geometry.attributes.position;
-              positions.setXYZ(0, conn.start.position.x, conn.start.position.y, conn.start.position.z);
-              positions.setXYZ(1, conn.end.position.x, conn.end.position.y, conn.end.position.z);
-              positions.needsUpdate = true;
-              
-              // Update opacity based on distance
-              const distance = conn.start.position.distanceTo(conn.end.position);
-              const opacity = Math.max(0.1, 0.5 - distance / 30);
-              conn.line.material.opacity = opacity;
-          });
-          
-          // Camera movement
-          camera.position.x = Math.sin(time * 0.05) * 15;
-          camera.position.z = Math.cos(time * 0.05) * 15 + 10;
-          camera.lookAt(scene.position);
-          
-          renderer.render(scene, camera);
-      }
-      
-      animate();
-      
-      // Responsiveness
-      window.addEventListener('resize', () => {
-          const width = window.innerWidth;
-          const height = window.innerHeight;
-          renderer.setSize(width, height);
-          camera.aspect = width / height;
-          camera.updateProjectionMatrix();
-      });
-    }
-    
-    // Neuron Animations for Step Cards
-    function createNeuronAnimation(containerId) {
-      const container = document.getElementById(containerId);
-      const width = container.offsetWidth;
-      const height = container.offsetHeight;
-      
-      const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
-      container.appendChild(canvas);
-      const ctx = canvas.getContext('2d');
-      
-      // Neuron points
-      const points = [];
-      const pointCount = 15;
-      
-      for (let i = 0; i < pointCount; i++) {
-        points.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          size: Math.random() * 4 + 2,
-          speed: Math.random() * 0.5 + 0.2,
-          angle: Math.random() * Math.PI * 2
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
         });
-      }
-      
-      // Animation function
-      function animateNeurons() {
-        ctx.clearRect(0, 0, width, height);
         
-        // Draw connections
-        for (let i = 0; i < points.length; i++) {
-          for (let j = i + 1; j < points.length; j++) {
-            const dx = points[i].x - points[j].x;
-            const dy = points[i].y - points[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            
-            if (dist < 150) {
-              const opacity = 1 - dist / 150;
-              ctx.beginPath();
-              ctx.moveTo(points[i].x, points[i].y);
-              ctx.lineTo(points[j].x, points[j].y);
-              ctx.strokeStyle = `rgba(139, 92, 246, ${opacity * 0.5})`;
-              ctx.lineWidth = 1;
-              ctx.stroke();
-            }
-          }
+        // Close mobile menu if open
+        if (nav.classList.contains('active')) {
+          nav.classList.remove('active');
+          mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
         }
-        
-        // Draw points and update positions
-        for (let i = 0; i < points.length; i++) {
-          const p = points[i];
-          
-          // Draw glow
-          const gradient = ctx.createRadialGradient(
-            p.x, p.y, 0,
-            p.x, p.y, p.size * 4
-          );
-          gradient.addColorStop(0, 'rgba(139, 92, 246, 0.8)');
-          gradient.addColorStop(1, 'rgba(139, 92, 246, 0)');
-          
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
-          ctx.fillStyle = gradient;
-          ctx.fill();
-          
-          // Draw neuron
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fillStyle = '#8b5cf6';
-          ctx.fill();
-          
-          // Update position
-          p.x += Math.cos(p.angle) * p.speed;
-          p.y += Math.sin(p.angle) * p.speed;
-          
-          // Bounce off edges
-          if (p.x < 0 || p.x > width) {
-            p.angle = Math.PI - p.angle;
-          }
-          if (p.y < 0 || p.y > height) {
-            p.angle = -p.angle;
-          }
-        }
-        
-        requestAnimationFrame(animateNeurons);
       }
+    });
+  });
+  
+  // Animate stats on scroll
+  const stats = document.querySelectorAll('.stat-number');
+  
+  function animateStats() {
+    stats.forEach(stat => {
+      const rect = stat.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
       
-      animateNeurons();
+      if (isVisible && !stat.dataset.animated) {
+        stat.dataset.animated = true;
+        stat.style.animation = 'count-up 1.5s forwards';
+      }
+    });
+  }
+  
+  // Initial check and event listener
+  animateStats();
+  window.addEventListener('scroll', animateStats);
+  
+  // Auth Modal
+  const authModal = document.getElementById('authModal');
+  const loginForm = document.getElementById('login-form');
+  const signupForm = document.getElementById('signup-form');
+  const closeModal = document.getElementById('closeModal');
+  const authTabs = document.querySelectorAll('.auth-tab');
+  const loginLink = document.getElementById('login-link');
+  const ctaBtn = document.getElementById('cta-btn');
+
+  // Functions to open/close modal
+  function openAuthModal(tab = 'login') {
+    authModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    // Activate correct tab
+    authTabs.forEach(tabEl => {
+      if (tabEl.dataset.tab === tab) {
+        tabEl.classList.add('active');
+        document.getElementById(`${tab}-form`).classList.add('active');
+      } else {
+        tabEl.classList.remove('active');
+        document.getElementById(`${tabEl.dataset.tab}-form`).classList.remove('active');
+      }
+    });
+  }
+
+  function closeAuthModal() {
+    authModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  // Event Listeners
+  loginLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    openAuthModal('login');
+  });
+
+  ctaBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openAuthModal('signup');
+  });
+
+  closeModal.addEventListener('click', closeAuthModal);
+
+  // Close modal when clicking outside
+  authModal.addEventListener('click', (e) => {
+    if (e.target === authModal) {
+      closeAuthModal();
+    }
+  });
+
+  // Tab switching
+  authTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const tabName = tab.dataset.tab;
+      authTabs.forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
+      
+      tab.classList.add('active');
+      document.getElementById(`${tabName}-form`).classList.add('active');
+    });
+  });
+
+  // Form submission
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    
+    // Login logic would go here
+    alert('Login effettuato con successo!');
+    closeAuthModal();
+  });
+
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('signup-name').value;
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    const confirm = document.getElementById('signup-confirm').value;
+    
+    if (password !== confirm) {
+      alert('Le password non corrispondono!');
+      return;
     }
     
-    // Initialize all animations
-  document.addEventListener('DOMContentLoaded', () => {
-  initNeuralBackground(); // L'animazione sarà visibile anche su mobile
-  // altre animazioni...
-
-      
-      createNeuronAnimation('neuron1');
-      createNeuronAnimation('neuron2');
-      createNeuronAnimation('neuron3');
-      createNeuronAnimation('neuron4');
-      createNeuronAnimation('scienceNeurons');
+    // Registration logic would go here
+    alert('Registrazione completata! Controlla la tua email per confermare l\'account.');
+    closeAuthModal();
+  });
+  
+  // Highlight active menu item on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+  
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - 100)) {
+        current = section.getAttribute('id');
+      }
     });
-  </script>
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+  
+  // Neural Background Animation
+  function initNeuralBackground() {
+    const neuralCanvas = document.getElementById('neuralCanvas');
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight;
+    
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, canvasWidth / canvasHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ 
+        alpha: true,
+        antialias: true 
+    });
+    renderer.setSize(canvasWidth, canvasHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    neuralCanvas.appendChild(renderer.domElement);
+    
+    // Particle system
+    const particles = [];
+    const particleCount = window.innerWidth <= 768 ? 100 : 300; // Riduci particelle su mobile
+    const particleGeometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount; i++) {
+        const i3 = i * 3;
+        positions[i3] = (Math.random() - 0.5) * 20;
+        positions[i3 + 1] = (Math.random() - 0.5) * 20;
+        positions[i3 + 2] = (Math.random() - 0.5) * 20;
+        
+        // Colori viola-blu
+        colors[i3] = Math.random() * 0.5 + 0.5; // R
+        colors[i3 + 1] = Math.random() * 0.3 + 0.3; // G
+        colors[i3 + 2] = Math.random() * 0.8 + 0.2; // B
+        
+        particles.push({
+            velocity: new THREE.Vector3(
+                (Math.random() - 0.5) * 0.05,
+                (Math.random() - 0.5) * 0.05,
+                (Math.random() - 0.5) * 0.05
+            ),
+            amplitude: Math.random() * 0.1 + 0.05,
+            frequency: Math.random() * 0.1 + 0.01
+        });
+    }
+    
+    particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    
+    const particleMaterial = new THREE.PointsMaterial({
+        size: 0.15,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.8,
+        sizeAttenuation: true,
+        blending: THREE.AdditiveBlending
+    });
+    
+    const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+    scene.add(particleSystem);
+    
+    // Create connections
+    const connections = [];
+    const connectionMaterial = new THREE.LineBasicMaterial({
+        color: 0x5d78ff,
+        transparent: true,
+        opacity: 0.15,
+        linewidth: 1
+    });
+    
+    // Create neuron nodes
+    const neurons = [];
+    const neuronCount = window.innerWidth <= 768 ? 8 : 15; // Riduci neuroni su mobile
+    
+    for (let i = 0; i < neuronCount; i++) {
+        const neuronGeometry = new THREE.SphereGeometry(0.3, 8, 8);
+        const neuronMaterial = new THREE.MeshBasicMaterial({
+            color: new THREE.Color(Math.random() * 0.5 + 0.5, Math.random() * 0.3, Math.random() * 0.8 + 0.2),
+            transparent: true,
+            opacity: 0.7
+        });
+        
+        const neuron = new THREE.Mesh(neuronGeometry, neuronMaterial);
+        neuron.position.set(
+            (Math.random() - 0.5) * 15,
+            (Math.random() - 0.5) * 15,
+            (Math.random() - 0.5) * 15
+        );
+        
+        neurons.push(neuron);
+        scene.add(neuron);
+    }
+    
+    // Create connections between neurons
+    for (let i = 0; i < neuronCount; i++) {
+        for (let j = i + 1; j < neuronCount; j++) {
+            if (Math.random() > 0.7) {
+                const dx = neurons[i].position.x - neurons[j].position.x;
+                const dy = neurons[i].position.y - neurons[j].position.y;
+                const dz = neurons[i].position.z - neurons[j].position.z;
+                const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+                
+                if (dist < 8) {
+                    const connectionGeometry = new THREE.BufferGeometry().setFromPoints([
+                        neurons[i].position.clone(),
+                        neurons[j].position.clone()
+                    ]);
+                    
+                    const connection = new THREE.Line(connectionGeometry, connectionMaterial);
+                    scene.add(connection);
+                    connections.push({
+                        line: connection,
+                        start: neurons[i],
+                        end: neurons[j]
+                    });
+                }
+            }
+        }
+    }
+    
+    // Add pulsing effect to neurons
+    neurons.forEach(neuron => {
+        neuron.userData = {
+            baseScale: neuron.scale.clone(),
+            pulseSpeed: Math.random() * 0.01 + 0.005
+        };
+    });
+    
+    // Camera position and animation
+    camera.position.z = 20;
+    
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0x444444);
+    scene.add(ambientLight);
+    
+    const pointLight = new THREE.PointLight(0x5d78ff, 1, 100);
+    pointLight.position.set(10, 10, 10);
+    scene.add(pointLight);
+    
+    // Animation loop
+    let time = 0;
+    
+    function animate() {
+        requestAnimationFrame(animate);
+        
+        time += 0.01;
+        
+        // Animate particles
+        const positions = particleGeometry.attributes.position.array;
+        for (let i = 0; i < particleCount; i++) {
+            const i3 = i * 3;
+            const p = particles[i];
+            
+            positions[i3] += Math.sin(time * p.frequency) * p.amplitude + p.velocity.x;
+            positions[i3 + 1] += Math.cos(time * p.frequency) * p.amplitude + p.velocity.y;
+            positions[i3 + 2] += Math.sin(time * p.frequency * 0.5) * p.amplitude + p.velocity.z;
+            
+            // Wrap around edges
+            if (Math.abs(positions[i3]) > 10) positions[i3] = -positions[i3];
+            if (Math.abs(positions[i3 + 1]) > 10) positions[i3 + 1] = -positions[i3 + 1];
+            if (Math.abs(positions[i3 + 2]) > 10) positions[i3 + 2] = -positions[i3 + 2];
+        }
+        particleGeometry.attributes.position.needsUpdate = true;
+        
+        // Animate neurons
+        neurons.forEach(neuron => {
+            const pulse = Math.sin(time * neuron.userData.pulseSpeed) * 0.2 + 1;
+            neuron.scale.copy(neuron.userData.baseScale).multiplyScalar(pulse);
+            
+            // Gentle movement
+            neuron.position.x += Math.sin(time * neuron.userData.pulseSpeed * 0.5) * 0.01;
+            neuron.position.y += Math.cos(time * neuron.userData.pulseSpeed * 0.7) * 0.01;
+        });
+        
+        // Update connections
+        connections.forEach(conn => {
+            const positions = conn.line.geometry.attributes.position;
+            positions.setXYZ(0, conn.start.position.x, conn.start.position.y, conn.start.position.z);
+            positions.setXYZ(1, conn.end.position.x, conn.end.position.y, conn.end.position.z);
+            positions.needsUpdate = true;
+            
+            // Update opacity based on distance
+            const dx = conn.start.position.x - conn.end.position.x;
+            const dy = conn.start.position.y - conn.end.position.y;
+            const dz = conn.start.position.z - conn.end.position.z;
+            const distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+            const opacity = Math.max(0.1, 0.5 - distance / 30);
+            conn.line.material.opacity = opacity;
+        });
+        
+        // Camera movement
+        camera.position.x = Math.sin(time * 0.05) * 15;
+        camera.position.z = Math.cos(time * 0.05) * 15 + 10;
+        camera.lookAt(scene.position);
+        
+        renderer.render(scene, camera);
+    }
+    
+    animate();
+    
+    // Responsiveness
+    window.addEventListener('resize', () => {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    });
+  }
+  
+  // Neuron Animations for Step Cards
+  function createNeuronAnimation(containerId) {
+    const container = document.getElementById(containerId);
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
+    
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    container.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    
+    // Neuron points
+    const points = [];
+    const pointCount = window.innerWidth <= 768 ? 8 : 15; // Riduci punti su mobile
+    
+    for (let i = 0; i < pointCount; i++) {
+      points.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        size: Math.random() * 4 + 2,
+        speed: Math.random() * 0.5 + 0.2,
+        angle: Math.random() * Math.PI * 2
+      });
+    }
+    
+    // Animation function
+    function animateNeurons() {
+      ctx.clearRect(0, 0, width, height);
+      
+      // Draw connections
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          const dx = points[i].x - points[j].x;
+          const dy = points[i].y - points[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < 150) {
+            const opacity = 1 - dist / 150;
+            ctx.beginPath();
+            ctx.moveTo(points[i].x, points[i].y);
+            ctx.lineTo(points[j].x, points[j].y);
+            ctx.strokeStyle = `rgba(139, 92, 246, ${opacity * 0.5})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      
+      // Draw points and update positions
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        
+        // Draw glow
+        const gradient = ctx.createRadialGradient(
+          p.x, p.y, 0,
+          p.x, p.y, p.size * 4
+        );
+        gradient.addColorStop(0, 'rgba(139, 92, 246, 0.8)');
+        gradient.addColorStop(1, 'rgba(139, 92, 246, 0)');
+        
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
+        ctx.fillStyle = gradient;
+        ctx.fill();
+        
+        // Draw neuron
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#8b5cf6';
+        ctx.fill();
+        
+        // Update position
+        p.x += Math.cos(p.angle) * p.speed;
+        p.y += Math.sin(p.angle) * p.speed;
+        
+        // Bounce off edges
+        if (p.x < 0 || p.x > width) {
+          p.angle = Math.PI - p.angle;
+        }
+        if (p.y < 0 || p.y > height) {
+          p.angle = -p.angle;
+        }
+      }
+      
+      requestAnimationFrame(animateNeurons);
+    }
+    
+    animateNeurons();
+  }
+  
+  // Initialize all animations
+  document.addEventListener('DOMContentLoaded', () => {
+    initNeuralBackground();
+    createNeuronAnimation('neuron1');
+    createNeuronAnimation('neuron2');
+    createNeuronAnimation('neuron3');
+    createNeuronAnimation('neuron4');
+    createNeuronAnimation('scienceNeurons');
+  });
+</script>
 </body>
 </html>
